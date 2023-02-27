@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cadetblue;
+    color: black
+}
+
+.draggable-elements{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    .draggable{
+        height: 5rem;
+        width: 5rem;
+        font-size: 4rem;
+        margin: 0rem 0.5rem;
+        cursor: move;
+        transition: .5s linear;
+        &:hover{
+            opacity: 0.5;
+        }
+    }
+}
+
+.droppable-elements{
+    display: flex;
+    .droppable{
+        height: 6.5rem;
+        width: 6.5rem;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        font-size: 4rem;
+        font-weight: bold;
+        background-color: #fff;
+        border: 3px dashed #111;
+        transition: border-width .2s transform .2s background-color .4s;
+        span{   
+            font-size: 1.25rem;
+            pointer-events: none;
+        }
+    }
+}
+
+
+.droppable.droppable-hover{
+    border-width: 5px;
+    color: #fff;
+}
+
+.droppable.dropped span{
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.droppable.dropped i{
+    pointer-events: none;
+}
+
+.draggable.dragged{
+    user-select: none;
+    opacity: 0.1;
+    cursor: default;
+}
+
+.draggable.dragged:hover{
+    opacity: 0.1;
+}
+
+@media (max-width: 600px) {
+    html{
+        font-size: 14px;
+    }
+    .draggable-elements{
+        margin: 1.5rem;
+    }
+}
